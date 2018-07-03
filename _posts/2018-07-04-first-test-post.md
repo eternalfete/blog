@@ -5,8 +5,8 @@ categories:
  - test
 tags:
  - test
- - git, 
- - github, 
+ - git 
+ - github 
  - vscode
 ---
 # 첫 번째 테스트 글 #
