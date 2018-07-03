@@ -4,7 +4,10 @@ description: It is post to test connect git with local and github repository and
 categories:
  - test
 tags:
- - test, git, github, vscode
+ - test
+ - git, 
+ - github, 
+ - vscode
 ---
 # 첫 번째 테스트 글 #
 
