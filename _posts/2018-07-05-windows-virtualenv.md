@@ -1,6 +1,6 @@
 ---
-title: [TDD-DRF Study] 1. windows에서 가상 환경 설정하기
-description: windows 10에서 django 프로젝트를 진행하기 위해 virtualenv 를 설치하고, 가상 환경을 설정한다.
+title: "[TDD-DRF] 1. windows에서 가상 환경 설정하기"
+description: "windows 10에서 django 프로젝트를 진행하기 위해 virtualenv 를 설치하고, 가상 환경을 설정한다."
 categories:
 - Python
 tags:
@@ -11,6 +11,9 @@ tags:
 - 가상환경
 - 파이썬
 ---
+
+> <sub>본 글은 학습한 내용을 정리하기 위해 작성한 것으로 오류가 있을 수 있는 점 염두에 두고 읽어주시기 바랍니다.<br />
+  제가 잘못 알고 있는 부분에 대해 알려주시면 공부에 도움이 많이 될 것입니다. 감사합니다.</sub>
 
 # Windows 10 에 Virtualenv 설치하기 #
 
