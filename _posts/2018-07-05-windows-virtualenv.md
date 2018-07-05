@@ -12,7 +12,7 @@ tags:
 - 파이썬
 ---
 
-> <sub>본 글은 학습한 내용을 정리하기 위해 작성한 것으로 오류가 있을 수 있는 점 염두에 두고 읽어주시기 바랍니다.\
+> <sub>본 글은 학습한 내용을 정리하기 위해 작성한 것으로 오류가 있을 수 있는 점 염두에 두고 읽어주시기 바랍니다.<br />
 > 제가 잘못 알고 있는 부분에 대해 알려주시면 공부에 도움이 많이 될 것입니다. 감사합니다.</sub>
 
 # Windows 10 에 Virtualenv 설치 #
@@ -36,13 +36,13 @@ python 3.3 이후로 [venv](https://docs.python.org/3/library/venv.html)가 공�
 virtualenv는 다음의 pip 명령을 통해 설치할 수 있다.
 
 ```bash
-pip install virtualenv
+> pip install virtualenv
 ```
 
 이렇게 virtualenv 가 설치되면 다음과 같이 지정된 폴더에 가상 환경을 설정할 수 있다.
 
 ```bash
-virtualenv ENV
+> virtualenv ENV
 ```
 
 여기서 `ENV`는 가상 환경이 설정될 폴더를 가르킨다.(`ENV` 라는 폴더가 존재하지 않으면 `virtualenv` 명령어와 함께 해당 폴더가 생성된다.)
@@ -50,13 +50,13 @@ virtualenv ENV
 이후
 
 ```bash
-ENV\Scripts\activate
+> ENV\Scripts\activate
 ```
 
 를 통해 가상 환경을 활성화 할 수 있으며, 작업이 끝나면 언제든
 
 ```bash
-deactivate
+> deactivate
 ```
 
 를 커맨드 라인에 입력함으로써 가상 환경을 종료할 수 있다.
@@ -70,7 +70,7 @@ virtualenvwrapper 의 문서 가장 첫 머리에는 virtualenvwrapper 가 virtu
 virtualenvwrapper 또한 pip 명령으로 설치 할 수 있다.
 
 ```bash
-pip install virtualenvwrapper-win
+> pip install virtualenvwrapper-win
 ```
 
 ([virtualenvwrapper-win](https://pypi.org/project/virtualenvwrapper-win/)은 기존의 virtualenvwrapper 를 Windows batch scripts 로 porting 한 것이다.)
@@ -80,7 +80,7 @@ virtalenvwrapper 를 사용하면 다음과 같은 명령어를 사용하게 된
 먼저 새로운 가상 환경을 만들기 위해서는
 
 ```bash
-mkvirtualenv myproject
+> mkvirtualenv myproject
 ```
 
 이렇게 가상 환경을 설정하면 `C:\Users\Username\Envs` 에 `myproject` 라는 폴더가 생성되면서 가상 환경에 필요한 파일들이 해당 폴더에 복사 된다.
@@ -88,7 +88,7 @@ mkvirtualenv myproject
 이후
 
 ```bash
-workon myproject
+> workon myproject
 ```
 
 라는 명령어로 기존의 `activate` 명령을 대신할 수 있다. (가상 환경 activate 시 가상 환경 설정 파일이 들어있는 폴더의 경로를 직접 입력할 필요가 없다.)
@@ -96,7 +96,7 @@ workon myproject
 가상 환경을 종료하기 위해서는 역시 `deactivate` 명령을 사용한다.
 
 ```bash
-deactivate
+> deactivate
 ```
 
 ## 3. [Virtualenvwrapper](http://virtualenvwrapper.readthedocs.io/en/latest/) 활용 ##
@@ -115,7 +115,7 @@ virtualenvwrapper 를 활용하면 가상 환경 생성, 사용, 종료 등의 �
 환경 변수 `WORKON_HOME`이 설정되어있지 않는 경우 가상 환경 파일이 저장되는 폴더의 기본 값은 `%USERPROFILE%\Envs` 로 설정되어 있는데, 이를 수정하기 위해서는 윈도우 커맨드 라인에서 환경 변수 `WORKON_HOME` 을 설정해주면 된다.
 
 ```bash
-setx WORKON_HOME "C:\Project\Envs"
+> setx WORKON_HOME "C:\Project\Envs"
 ```
 
 (임시로 `WORKON_HOME` 을 설정하기 위해서는 `set` 명령어를 사용 할 수 있다. 여기서는 향후 작업을 위해 지정된 값이 유지될 수 있도록 `setx` 명령어를 사용하였다. ([참고](https://superuser.com/questions/916649/what-is-the-difference-between-setx-and-set-in-environment-variables-in-windows, "set 과 setx 의 차이")))
@@ -125,7 +125,7 @@ setx WORKON_HOME "C:\Project\Envs"
 라는 문구가 뜨면 성공적으로 환경 변수를 저장한 것이다.
 
 ```bash
-echo %WORKON_HOME%
+> echo %WORKON_HOME%
 ```
 
 명령을 통해 다시 한 번 변수 값이 잘 지정 되었는지 확인할 수 있다. (`%WORKON_HOME%` 라고 출력 되는 경우 터미널을 닫았다 다시 열어 보자.)
@@ -133,7 +133,7 @@ echo %WORKON_HOME%
 이후 다음과 같이 가상 환경을 생성하면 `WORKON_HOME` 으로 지정된 폴더 아래 가상 환경 이름과 같은 폴더가 만들어지고 파일이 복사됨을 알 수 있다.
 
 ```bash
-mkvirtualenv myproject
+> mkvirtualenv myproject
 ```
 
 ### 3.2 가상 환경에 대응하는 프로젝트 폴더 생성 ###
@@ -145,12 +145,12 @@ mkvirtualenv myproject
 와 같은 에러 메시지를 볼 수 있다. 이를 피하기 위해 위의 `WORKON_HOME` 환경 변수 지정에서와 같이 `PROJECT_HOME` 환경 변수를 지정한다.
 
 ```bash
-setx PROJECT_HOME "C:\Project"
-echo %PROJECT_HOME%
+> setx PROJECT_HOME "C:\Project"
+> echo %PROJECT_HOME%
 ```
 
 환경 변수가 저장 된 것을 확인 한 후 `mkproject` 명령어를 사용하면 가상 환경이 만들어질 때 같은 이름의 프로젝트 폴더가 만들어지는 것을 확인할 수 있다.
 
 ```bash
-mkproject myproject
+> mkproject myproject
 ```
