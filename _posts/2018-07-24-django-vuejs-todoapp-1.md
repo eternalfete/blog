@@ -248,7 +248,7 @@ urlpatterns = [
 
 웹 브라우저를 켜서 `localhost:8000/api/` 에 접속해서 아래와 같은 화면이 나오는 것을 확인하자.
 
-![Todos REST API](/assets/images/todos-rest-api-01.png "Todos REST API root 화면")
+![Todos REST API](/assets/images/post_img/todos-rest-api-01.png "Todos REST API root 화면")
 
 ## 3. 다음 글 계획 ##
 
