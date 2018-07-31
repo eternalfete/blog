@@ -114,7 +114,8 @@ urlpatterns = [
 
 먼저 `style.css` 와 `main.js` 파일을 `index.html` 파일에 추가하자.
 
-```
+{% raw %}
+```html
 ...
 <head>
 ...
@@ -130,6 +131,8 @@ urlpatterns = [
 </body>
 ...
 ```
+{% endraw %}
+
 
 외부 라이브러리는 다음의 라이브러리를 사용한다.
 
