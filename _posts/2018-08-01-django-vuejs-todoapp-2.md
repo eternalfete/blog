@@ -114,7 +114,7 @@ urlpatterns = [
 
 먼저 `style.css` 와 `main.js` 파일을 `index.html` 파일에 추가하자.
 
-```django
+```
 ...
 <head>
 ...
