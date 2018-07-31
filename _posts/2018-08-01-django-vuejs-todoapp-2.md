@@ -187,6 +187,7 @@ var app = new Vue({
 
 이렇게 만든 Vue 인스턴스를 `index.html` 에 연결해보자.
 
+{% raw %}
 ```html
 <!-- /todoapp/templates/index.html -->
 ...
@@ -198,6 +199,7 @@ var app = new Vue({
   {% endverbatim %}
 ...
 ```
+{% endraw %}
 
 ![Vue 인스턴스 연결 후 index.html](/assets/images/post_img/vuejs1-index2.png "Vue 인스턴스 연결 후 index.html")
 *Vue 인스턴스 연결 후 index.html*
