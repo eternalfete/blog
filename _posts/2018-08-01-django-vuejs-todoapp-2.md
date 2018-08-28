@@ -25,8 +25,7 @@ photos:
 
 # [django REST framework](http://www.django-rest-framework.org/) 과 [Vue.js](https://kr.vuejs.org/) 를 이용한 Todo 앱 만들기 (2) #
 
-![Vue.js 결과](/assets/images/post_img/vuejs1-index7.gif "Vue.js 결과")
-*Vue.js를 활용한 예상 결과물*
+![Vue.js 결과](/assets/images/post_img/vuejs1-index7.gif "Vue.js를 활용한 예상 결과물")
 
 [지난 글](/_posts/2018-07-24-django-vuejs-todoapp-1.md)에서 django-rest-framework를 이용하여 간단한 REST API를 만들었다. 이번 글에서는 Vue.js를 적용해 사용자 친화적인 todoapp 화면과 기능을 구성해보고자 한다. 이 과정에서 새로운 할 일을 추가하는 기능(**C**reate), 할 일 목록을 읽어와 화면에 표시해주는 기능(**R**ead 또는 **R**etrieve), 할 일의 상태를 업데이트 하는 기능(**U**pdate), 할 일을 삭제하는 기능(**D**elete 또는 **D**estroy)을 구현한다.
 
@@ -105,8 +104,7 @@ urlpatterns = [
 
 명령어를 이용해 개발 서버를 켠 뒤 웹 브라우저를 열고 [http://localhost:8000](http://localhost:8000) 에 접속하면 아래와 같은 화면을 볼 수 있다.
 
-![index 기본 화면](/assets/images/post_img/vuejs1-index1.png "index 기본 화면")
-*index.html*
+![index 기본 화면](/assets/images/post_img/vuejs1-index1.png "index.html")
 
 ### 1.4 CSS, Javascript 파일 연결 ###
 
@@ -202,7 +200,6 @@ var app = new Vue({
 {% endraw %}
 
 ![Vue 인스턴스 연결 후 index.html](/assets/images/post_img/vuejs1-index2.png "Vue 인스턴스 연결 후 index.html")
-*Vue 인스턴스 연결 후 index.html*
 
 역시 django 개발 서버를 실행시키고 [http://localhost:8000](http://localhost:8000) 에 접속하면 위와 같은 화면이 나온다. 여기서 **TodoApp** 아래 나오는 주소는 Vue 인스턴스의 data 항목에 있는 `url` 값과 같음을 알 수 있다. (Vue 인스턴스와 연결이 잘 되었는지 확인하고자 `url` 을 출력하였고, 이후의 내용에선 해당 부분을 삭제한다.)
 
@@ -259,12 +256,10 @@ var app = new Vue({
 [http://localhost:8000](http://localhost:8000)에 접속해보면 여전히 아무런 내용이 뜨지 않는데, 아직 API에 데이터를 입력한 적이 없기 때문이다. [http://localhost:8000/api/todos/](http://localhost:8000/api/todos/) 페이지에 접속해서 페이지 하단의 문자 입력 창을 통해 몇 개의 예시를 입력해보자.
 
 ![API 서버에 예시 데이터 입력하기](/assets/images/post_img/vuejs1-api1.png "API 서버에 예시 데이터 입력하기")
-*API 서버에 예시 데이터 입력하기*
 
 위와 같이 예시 데이터를 몇 개 추가한 이후 [http://localhost:8000](http://localhost:8000)에 다시 접속해보면 아래와 같이 추가한 할 일 목록이 나오는 것을 확인할 수 있다.
 
 ![할 일 목록 출력 화면1](/assets/images/post_img/vuejs1-index3.png "할 일 목록 출력 화면1")
-*할 일 목록 출력 화면1*
 
 ### 2.3 axios.post 를 활용한 Create ###
 
@@ -291,7 +286,6 @@ var app = new Vue({
 `index.html` 만 수정하고 [http://localhost:8000](http://localhost:8000)에 접속해보면 새로운 텍스트 입력창과 버튼이 하나 추가 되었지만 잘 나오던 목록이 더 이상 나오지 않는 것을 확인할 수 있다.
 
 ![할 일 목록 입력 화면1 - 에러 발생](/assets/images/post_img/vuejs1-index4.png "할 일 목록 입력 화면1 - 에러 발생")
-*할 일 목록 입력 화면1 - 에러 발생*
 
 크롬 개발자 도구를 열어서 확인하면 `v-on:click="addTodo"` 가 Vue 인스턴스에 정의되어 있지 않아서 에러가 발생했음을 알 수 있다. 문제를 해결하기 위해 Vue 인스턴스의 `getData` 메소드 아래에 `addTodo` 메소드를 추가하도록 하자.
 
@@ -324,7 +318,6 @@ var app = new Vue({
 위의 내용을 `main.js` 에 추가하고 다시 [http://localhost:8000](http://localhost:8000) 페이지에 접속하면 기존의 목록이 잘 출력됨을 확인 할 수 있고, 아래와 같이 새로운 할 일을 추가할 수 있다.
 
 ![할 일 목록 입력 화면2](/assets/images/post_img/vuejs1-index5.gif "할 일 목록 입력 화면2")
-*할 일 목록 입력 화면2*
 
 ### 2.4 axios.delete 를 활용한 Delete ###
 
@@ -359,7 +352,6 @@ var app = new Vue({
 ```
 
 ![할 일 목록 삭제 화면](/assets/images/post_img/vuejs1-index6.gif "할 일 목록 삭제 화면")
-*할 일 목록 삭제 화면*
 
 페이지를 열고 휴지통 아이콘을 클릭하면 위와 같이 해당 할 일이 사라지는 것을 확인할 수 있다. 이후 페이지를 새로고침 하거나 API 서버를 확인하면 해당 할 일이 제대로 지워졌음을 알 수 있다.
 
@@ -409,11 +401,9 @@ var app = new Vue({
 `complete` 속성의 변화는 아래와 같이 아이콘의 색이 바뀌는 것으로 확인할 수 있다.
 
 ![complete 속성 변경 화면](/assets/images/post_img/vuejs1-index7.gif "complete 속성 변경 화면")
-*complete 속성 변경 화면*
 
 ## 3. 다음 글 계획 ##
 
 이어지는 글에서는 CSS 를 적용하여 화면을 조금 더 예쁘게 구성하고, 약간의 기능을 추가한다.
 
 ![CSS 적용 및 기능 추가 예상 결과물](/assets/images/post_img/todoapp1.gif "CSS 적용 및 기능 추가 예상 결과물")
-*CSS 적용 및 기능 추가 예상 결과물*
